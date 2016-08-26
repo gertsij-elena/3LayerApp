@@ -1,0 +1,51 @@
+﻿@model IEnumerable<NLayerApp.WEB.Models.NumberViewModel>
+
+@{
+    ViewBag.Title = "Index";
+}
+@section scripts{
+    <script type="text/javascript">
+    //dialog = $("#dialog-form").dialog({
+    //    autoOpen: false,
+    //    height: 700,
+    //    width: 900,
+    //    modal: true,
+    //    title: "Добавить заказ",
+    //    buttons: {
+    //        "Добавить": function () {
+    //        },
+
+    //        "Отмена": function () {
+    //            $(this).dialog("close");
+    //        }
+    //    }
+    //    });
+    //$('.makeorder').click(function (e) {
+    //    e.preventDefault();
+    //    alert("click");
+    //});
+    </script>
+    }
+<h2>Список номеров</h2>
+<div id="dialog-form">
+</div>
+<table class="table">
+    
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.NumberId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Count)
+            </td>
+            
+            <td>
+                @Html.ActionLink("Заказать", "MakeOrder", new { id = item.NumberId }, new {@class="makeorder" })
+            </td>
+        </tr>
+    }
+
+</table>
