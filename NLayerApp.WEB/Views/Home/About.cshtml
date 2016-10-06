@@ -1,7 +1,35 @@
-﻿
-@{
-    ViewBag.Title = "About";
+@section scripts{
+<script src="~/Scripts/library/angular.js"></script>
+<script src="//angular-ui.github.io/bootstrap/ui-bootstrap-tpls-1.2.1.js"></script>   
+    <script src="~/Scripts/app/app.js"></script>
+    <script src="~/Scripts/app/controller.js"></script>    
 }
+<div ng-app="myapp">
+    <div class="row" >
+        <div class="col-md-8 col-sm-8 col-sx-8" ng-controller="myController" id="slides_control">
+            <div>
+                <uib-carousel interval="myInterval">
+                    <uib-slide ng-repeat="slide in slides" active="active" index="$index">
+                        <img ng-src="{{slide.image}}" style="margin:auto;" />
+                    </uib-slide>
+                </uib-carousel>
+            </div> 
+        </div>
 
-<h2>About</h2>
+
+        <div class="col-md-4 col-sm-4 col-sx-4" style="padding-left:2%">
+            <p>Адрес гостиницы: г. Винница, пл. Октября, 1</p>
+            <p>Телефон:+38 (0432) 67-11-44</p>
+            <p>Общая информация:  Гостиница "Южный Буг" расположена в самом центре Винницы, на берегу реки Южный Буг, рядом с набережной "Рошен",</p>
+            <p>где по вечерам демонстрируется шоу Винницкого светомузыкального фонтана.</p>
+            <p>Номера:  Двух- и трехместные номера категории "стандарт" (есть номера с ремонтом и без ремонта), номера категории "люкс" (после реконструкции).</p>
+            <p>Цена:от 160 грн.</p>
+            <p>Общая вместимость до 100 человек. Зона приема Wi-Fi в холле гостиницы и в кафе.</p>
+            <p>Ресторан:  Ресторан и бар - европейская кухня. Работает круглосуточно.</p>
+            <p>В стоимость включено:  Wi-Fi.</p>
+        </div>
+    </div>
+</div>
+
+
 
